@@ -26,8 +26,27 @@
         maxZoom: 19,
     }).addTo(map);
 
-    var marker = L.marker([-7.797068, 110.370529]).addTo(map);
+    var marker = L.marker([-7.7839276105863675, 110.35922437906267]).addTo(map);
 
+    var circle = L.circle([-7.7839276105863675, 110.35922437906267], {
+        color: 'blue',
+        fillColor: 'blue',
+        fillOpacity: 0.1,
+        radius: 300
+    }).addTo(map);
+
+    map.on('click', function(e) {
+      console.log(e.latlng.lat,e.latlng.lng);
+    });
+
+    var latlngs = [
+        [-7.783914323112174, 110.35923510789873],
+        [-7.783922295596743, 110.36069691181184],
+        [-7.785415805030793, 110.36076396703723],
+        [-7.785660293612677, 110.36186635494234],
+    ];
+
+    var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
     // map.invalidateSize()
 
 </script>
